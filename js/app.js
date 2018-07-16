@@ -3,6 +3,9 @@ const cardsBox = document.querySelector('.deck');
 let openCards = [];
 let matchedCards = [];
 const restartBtn = document.querySelector('.restart');
+let moves = 0;
+const movesContainer = document.querySelector('.moves');
+movesContainer.innerHTML = 0;
 /*
  * Create a list that holds all of your cards
  */
@@ -91,6 +94,7 @@ function compareCards (currentCard, previousCard) {
         },300);
         openCards = [];
     }
+    addmoves();
 }
 
 restartBtn.addEventListener('click', function(){
@@ -102,5 +106,12 @@ restartBtn.addEventListener('click', function(){
 
     //reset any related variables
     matchedCards = [];
-    
+    moves = 0;
+    movesContainer.innerHTML = moves;
+
 });
+
+function addmoves() {
+    moves++;
+    movesContainer.innerHTML = moves;
+}
