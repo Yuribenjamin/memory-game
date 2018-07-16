@@ -1,5 +1,7 @@
 // Declare Global variables
 const cardsBox = document.querySelector('.deck');
+let openCards = [];
+let matchedCards = [];
 /*
  * Create a list that holds all of your cards
  */
@@ -27,6 +29,7 @@ function init () {
         card.classList.add('card');
         card.innerHTML = `<i class="fa ${cards[i]}"></i>`;
         cardsBox.appendChild(card);
+        click(card);
     }
 }
 init();
@@ -56,3 +59,34 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+function click(card) {
+    card.addEventListener('click', function(){
+        const currentCard = this;
+        const previousCard = openCards[0];
+
+        if(openCards.length === 1) {
+            card.classList.add('open', 'show');
+            openCards.push(this);
+            compareCards(currentCard, previousCard);
+        }else {
+            card.classList.add('open', 'show');
+            openCards.push(this);
+        }
+    });
+}
+
+function compareCards (currentCard, previousCard) {
+    if(currentCard.innerHTML === previousCard.innerHTML) {
+        currentCard.classList.add('match');
+        previousCard.classList.add('match');
+        matchedCards.push(currentCard,previousCard);
+        openCards = [];
+
+    }else {
+        setTimeout(function(){
+            currentCard.classList.remove('open', 'show');
+            previousCard.classList.remove('open', 'show');
+        },300);
+        openCards = [];
+    }
+}
