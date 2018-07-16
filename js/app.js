@@ -2,6 +2,7 @@
 const cardsBox = document.querySelector('.deck');
 let openCards = [];
 let matchedCards = [];
+const restartBtn = document.querySelector('.restart');
 /*
  * Create a list that holds all of your cards
  */
@@ -91,3 +92,15 @@ function compareCards (currentCard, previousCard) {
         openCards = [];
     }
 }
+
+restartBtn.addEventListener('click', function(){
+    // delete cards
+    cardsBox.innerHTML = '';
+
+    //invoke init to generate cards
+    init();
+
+    //reset any related variables
+    matchedCards = [];
+    
+});
