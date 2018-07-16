@@ -24,10 +24,11 @@ const cards = [ 'fa-diamond', 'fa-diamond',
  *   - add each card's HTML to the page
  */
 function init () {
-    for (let i = 0; i < cards.length; i++) {
+    const icons = shuffle(cards);
+    for (let i = 0; i < icons.length; i++) {
         const card = document.createElement('li');
         card.classList.add('card');
-        card.innerHTML = `<i class="fa ${cards[i]}"></i>`;
+        card.innerHTML = `<i class="fa ${icons[i]}"></i>`;
         cardsBox.appendChild(card);
         click(card);
     }
