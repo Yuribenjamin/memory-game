@@ -10,6 +10,10 @@ const timerContainers = document.querySelector('.timer');
 let liveTimer, totalSeconds = 0;
 timerContainers.innerHTML = totalSeconds;
 firstClick = true;
+const stars = document.querySelector('.stars');
+stars.innerHTML = `<li><i class="fa fa-star"></i></li>
+                   <li><i class="fa fa-star"></i></li>
+                   <li><i class="fa fa-star"></i></li>`;
 /*
  * Create a list that holds all of your cards
  */
@@ -126,6 +130,7 @@ restartBtn.addEventListener('click', function(){
 function addmoves() {
     moves++;
     movesContainer.innerHTML = moves;
+    starRating();
 }
 
 function startTimer() {
@@ -137,4 +142,16 @@ function startTimer() {
 
 function stopTimer() {
     clearInterval(liveTimer);
+}
+
+function starRating() {
+    switch (moves) {
+        case 18:
+        stars.innerHTML = `<li><i class="fa fa-star"></i></li>
+                           <li><i class="fa fa-star"></i></li>`;
+        break;
+        case 25:
+        stars.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+        break;
+    }
 }
