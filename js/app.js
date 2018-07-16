@@ -111,27 +111,27 @@ function compareCards (currentCard, previousCard) {
 }
 
 restartBtn.addEventListener('click', function(){
-    // delete cards
+    resetGame();
+});
+
+function resetVal(){
     cardsBox.innerHTML = '';
-
-    //invoke init to generate cards
-    init();
-
-    //reset any related variables
     matchedCards = [];
     moves = 0;
     movesContainer.innerHTML = moves;
-
-    // reset timer
-    totalSeconds = 0;
-    timerContainers.innerHTML = totalSeconds;
-
-    // reset star rating
     stars.innerHTML = `<li><i class="fa fa-star"></i></li>
                        <li><i class="fa fa-star"></i></li>
                        <li><i class="fa fa-star"></i></li>`;
+    totalSeconds = 0;
+    timerContainers.innerHTML = totalSeconds;
+    stopTimer();
+    firstClick = true;
+}
 
-});
+function resetGame() {
+    resetVal();
+    init();
+}
 
 function addmoves() {
     moves++;
@@ -165,6 +165,6 @@ function starRating() {
 function gameOver() {
     if(moves >= 40) {
         alert ('Game Over');
-        stopTimer();
+        resetGame();
     }
 }
