@@ -65,11 +65,11 @@ function click(card) {
         const previousCard = openCards[0];
 
         if(openCards.length === 1) {
-            card.classList.add('open', 'show');
+            card.classList.add('open', 'show', 'disable');
             openCards.push(this);
             compareCards(currentCard, previousCard);
         }else {
-            card.classList.add('open', 'show');
+            card.classList.add('open', 'show', 'disable');
             openCards.push(this);
         }
     });
@@ -84,8 +84,8 @@ function compareCards (currentCard, previousCard) {
 
     }else {
         setTimeout(function(){
-            currentCard.classList.remove('open', 'show');
-            previousCard.classList.remove('open', 'show');
+            currentCard.classList.remove('open', 'show', 'disable');
+            previousCard.classList.remove('open', 'show', 'disable');
         },300);
         openCards = [];
     }
