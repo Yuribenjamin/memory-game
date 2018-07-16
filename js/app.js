@@ -6,6 +6,10 @@ const restartBtn = document.querySelector('.restart');
 let moves = 0;
 const movesContainer = document.querySelector('.moves');
 movesContainer.innerHTML = 0;
+const timerContainers = document.querySelector('.timer');
+let liveTimer, totalSeconds = 0;
+timerContainers.innerHTML = totalSeconds;
+firstClick = true;
 /*
  * Create a list that holds all of your cards
  */
@@ -66,6 +70,10 @@ function shuffle(array) {
  */
 function click(card) {
     card.addEventListener('click', function(){
+        if(firstClick){
+            startTimer();
+            firstClick = false;
+        }
         const currentCard = this;
         const previousCard = openCards[0];
 
@@ -109,9 +117,24 @@ restartBtn.addEventListener('click', function(){
     moves = 0;
     movesContainer.innerHTML = moves;
 
+    // reset timer
+    totalSeconds = 0;
+    timerContainers.innerHTML = totalSeconds;
+
 });
 
 function addmoves() {
     moves++;
     movesContainer.innerHTML = moves;
+}
+
+function startTimer() {
+    liveTimer = setInterval(function(){
+        totalSeconds++;
+        timerContainers.innerHTML = totalSeconds;
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(liveTimer);
 }
