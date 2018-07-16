@@ -1,3 +1,5 @@
+// Declare Global variables
+const cardsBox = document.querySelector('.deck');
 /*
  * Create a list that holds all of your cards
  */
@@ -19,7 +21,15 @@ const cards = [ 'fa-diamond', 'fa-diamond',
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
-
+function init () {
+    for (let i = 0; i < cards.length; i++) {
+        const card = document.createElement('li');
+        card.classList.add('card');
+        card.innerHTML = `<i class="fa ${cards[i]}"></i>`;
+        cardsBox.appendChild(card);
+    }
+}
+init();
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
