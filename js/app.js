@@ -125,6 +125,11 @@ restartBtn.addEventListener('click', function(){
     totalSeconds = 0;
     timerContainers.innerHTML = totalSeconds;
 
+    // reset star rating
+    stars.innerHTML = `<li><i class="fa fa-star"></i></li>
+                       <li><i class="fa fa-star"></i></li>
+                       <li><i class="fa fa-star"></i></li>`;
+
 });
 
 function addmoves() {
