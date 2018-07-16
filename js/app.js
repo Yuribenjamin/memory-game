@@ -107,6 +107,7 @@ function compareCards (currentCard, previousCard) {
         openCards = [];
     }
     addmoves();
+    gameOver();
 }
 
 restartBtn.addEventListener('click', function(){
@@ -158,5 +159,12 @@ function starRating() {
         case 25:
         stars.innerHTML = `<li><i class="fa fa-star"></i></li>`;
         break;
+    }
+}
+
+function gameOver() {
+    if(moves >= 40) {
+        alert ('Game Over');
+        stopTimer();
     }
 }
