@@ -17,12 +17,11 @@ The game is built using simple HTML, CSS and JavaScript.
 
 The starter code is provided by Udacity for the Udacity FEND's students.
 
-Images from [fontawesome] (https://fontawesome.com/).
+Images from [fontawesome](https://fontawesome.com/).
 
-Background from [Subtle Patterns] (https://www.toptal.com/designers/subtlepatterns/darkness/).
+Background from [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/darkness/).
 
-The shuffle() function is provided by Udacity from [stackoverflow]
-(https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/2450976#2450976).
+The shuffle() function is provided by Udacity from [stackoverflow](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/2450976#2450976).
 
 
 ## Licence
