@@ -126,10 +126,13 @@ h1 {
 	align-items: center;
 }
 
+
 .modal-container.appear {
 	
 	display: flex;
 }
+
+
 .modal {
     background: #ffffff url('../img/darkness.png'); /* Background pattern from Subtle Patterns */
     color: white;
@@ -142,6 +145,7 @@ h1 {
 	text-align: center;
 }
 
+
 @keyframes modal {
 from {
 	opacity: 0;
@@ -152,6 +156,18 @@ to {
 	transform: translate3d(0, 0, 0);
 }
 }
+
+
 .appear .modal {
 	animation: modal .3s;
+}
+
+
+.button {
+	background: black;
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	border-radius: 10px;
 }
