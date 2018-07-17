@@ -108,6 +108,7 @@ function compareCards (currentCard, previousCard) {
     }
     addmoves();
     gameOver();
+    gameWon();
 }
 
 restartBtn.addEventListener('click', function(){
@@ -166,5 +167,31 @@ function gameOver() {
     if(moves >= 40) {
         alert ('Game Over');
         resetGame();
+    }
+}
+
+function modal() {
+    const modal = document.getElementById('endGame');
+    modal.classList.add('appear');
+    
+}
+
+function gameWon() {
+    if(matchedCards.length == cards.length) {
+        clearInterval(liveTimer);
+        modal();
+
+
+        let modalMoves = document.querySelector('.modal-moves');
+        modalMoves.innerHTML = `Moves : ${moves}`;
+        const time = document.querySelector('.modal-time');
+	    time.innerHTML = `Total Seconds : ${totalSeconds}`;
+        const playAgain = document.querySelector('.button');
+        playAgain.addEventListener('click', function() {
+        resetGame();
+        const modal = document.getElementById('endGame');
+        modal.classList.remove('appear');
+        
+    }); 
     }
 }
