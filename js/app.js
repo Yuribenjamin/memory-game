@@ -17,17 +17,9 @@ stars.innerHTML = `<li><i class="fa fa-star"></i></li>
 /*
  * Create list that holds all cards.
  */
-const cards = [ 'fa-music', 'fa-music',
-                'fa-space-shuttle', 'fa-space-shuttle',
-                'fa-terminal', 'fa-terminal',
-                'fa-code', 'fa-code',
-                'fa-headphones', 'fa-headphones',
-                'fa-bug', 'fa-bug',
-                'fa-magic', 'fa-magic',
-                'fa-rocket', 'fa-rocket'
+const cardList = [ 'fa-music', 'fa-space-shuttle', 'fa-terminal', 'fa-code', 'fa-headphones', 'fa-bug', 'fa-magic', 'fa-rocket'];
 
-
-];
+const cards = cardList.concat(cardList);
 
 // Initialize Game
 
