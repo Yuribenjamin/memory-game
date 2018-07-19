@@ -15,7 +15,7 @@ stars.innerHTML = `<li><i class="fa fa-star"></i></li>
                    <li><i class="fa fa-star"></i></li>
                    <li><i class="fa fa-star"></i></li>`;
 /*
- * Create a list that holds all of your cards
+ * Create list that holds all cards.
  */
 const cards = [ 'fa-music', 'fa-music',
                 'fa-space-shuttle', 'fa-space-shuttle',
@@ -29,12 +29,8 @@ const cards = [ 'fa-music', 'fa-music',
 
 ];
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+// Initialize Game
+
 function init () {
     const icons = shuffle(cards);
     for (let i = 0; i < icons.length; i++) {
@@ -62,16 +58,8 @@ function shuffle(array) {
 }
 
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
+// EventListnener handle click for open & show.
+
 function click(card) {
     card.addEventListener('click', function(){
         if(firstClick){
@@ -91,6 +79,8 @@ function click(card) {
         }
     });
 }
+
+// comparing between two pairs.
 
 function compareCards (currentCard, previousCard) {
     if(currentCard.innerHTML === previousCard.innerHTML) {
@@ -115,6 +105,8 @@ restartBtn.addEventListener('click', function(){
     resetGame();
 });
 
+// Reset Current Values.
+
 function resetVal(){
     cardsBox.innerHTML = '';
     matchedCards = [];
@@ -130,10 +122,14 @@ function resetVal(){
     firstClick = true;
 }
 
+// restart Game.
+
 function resetGame() {
     resetVal();
     init();
 }
+
+// Add Moves.
 
 function addmoves() {
     moves++;
@@ -141,12 +137,16 @@ function addmoves() {
     starRating();
 }
 
+// Timer.
+
 function startTimer() {
     liveTimer = setInterval(function(){
         totalSeconds++;
         timerContainers.innerHTML = totalSeconds;
     }, 1000);
 }
+
+// Timer [Stop].
 
 function stopTimer() {
     clearInterval(liveTimer);
@@ -164,6 +164,8 @@ function starRating() {
     }
 }
 
+// Game over Message
+
 function gameOver() {
     if(moves >= 40) {
         alert ('Game Over');
@@ -171,11 +173,15 @@ function gameOver() {
     }
 }
 
+// Display Modal if player won!.
+
 function modal() {
     const modal = document.getElementById('endGame');
     modal.classList.add('appear');
     
 }
+
+// Gamewon function handle winning process if play won!.
 
 function gameWon() {
     if(matchedCards.length == cards.length) {
