@@ -181,7 +181,9 @@ function gameWon() {
     if(matchedCards.length == cards.length) {
         clearInterval(liveTimer);
         modal();
-
+        let modalStars = document.querySelector('.modal-stars');
+        let star = stars.innerHTML;
+        modalStars.innerHTML = `Stars : ${star}`;
 
         let modalMoves = document.querySelector('.modal-moves');
         modalMoves.innerHTML = `Moves : ${moves}`;
