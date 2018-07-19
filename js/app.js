@@ -144,6 +144,8 @@ function stopTimer() {
     clearInterval(liveTimer);
 }
 
+// Add Stars.
+
 function starRating() {
     switch (moves) {
         case 18:
