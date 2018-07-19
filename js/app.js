@@ -119,6 +119,7 @@ function resetVal(){
     cardsBox.innerHTML = '';
     matchedCards = [];
     moves = 0;
+    openCards = [];
     movesContainer.innerHTML = moves;
     stars.innerHTML = `<li><i class="fa fa-star"></i></li>
                        <li><i class="fa fa-star"></i></li>
