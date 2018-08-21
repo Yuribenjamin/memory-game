@@ -1,5 +1,6 @@
 # Memory Game Project
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Yuribenjamin/restaurant-reviews/blob/master/LICENSE)
+
 Third Project in Google Developer Scolarship, passed on
 HTML & CSS & JavaScript & bootstrap.
 
