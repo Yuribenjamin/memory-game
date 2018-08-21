@@ -1,6 +1,17 @@
 # Memory Game Project
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Yuribenjamin/restaurant-reviews/blob/master/LICENSE)
 Third Project in Google Developer Scolarship, passed on
-HTML & CSS & JavaScript & bootstrap, it's for educational purpose.
+HTML & CSS & JavaScript & bootstrap.
+
+Udacity's Google Developer Challenger Scholarship - Front End Web Development
+
+```
+    [+] AUTOR:      Ibrahim Ragab
+    [+] EMAIL:      Abrahammoustafa@hotmail.co.uk
+    [+] Github:     https://github.com/Yuribenjamin
+    [+] twitter:    @AbrahamRagab
+
+```
 
 ## Summary
 
