@@ -2,7 +2,7 @@
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Yuribenjamin/restaurant-reviews/blob/master/LICENSE)
 
 Third Project in Google Developer Scolarship, passed on
-HTML & CSS & JavaScript & bootstrap.
+HTML & CSS & vanilla js.
 
 Udacity's Google Developer Challenger Scholarship - Front End Web Development
 
